@@ -1,3 +1,3 @@
 <div class="container">
-	<h1>Bienvenido a la mini-aplicación CRUD de empleados</h1>
+	<h1>Aplicación CRUD de empleados</h1>
 </div>
