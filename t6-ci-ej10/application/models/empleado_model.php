@@ -7,12 +7,17 @@ class Empleado_model extends CI_Model {
 		$empleado->ape1 = $ape1;
 		$empleado->ape2 = $ape2;
 		$empleado->tlf = $tlf;
-		$empleado->ciudad = R::load('ciudad', $id_ciudad);
+		
+		$ciudad = R::load('ciudad', $id_ciudad);
+		
+		$ciudad -> xownEmpleadolist[] = $empleado; 
+		
 		foreach ($ids_lp as $id_lp) {
 			$empleado->sharedLpList[] = R::load('lp',$id_lp);
 		}
 		
-		R::store($empleado);
+		R::store($ciudad);
+		
 		R::close();
 	}
 	

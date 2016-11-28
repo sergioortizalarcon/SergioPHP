@@ -3,7 +3,9 @@
 	<tr><th>Nombre del L.P.</th> <th></th> <th></th> </tr>
 	<?php foreach ($body['lps'] as $lp): ?>
 		<tr>
-			<td><?= $lp['nombre']?></td>
+			<td>
+				<?= $lp['nombre']?>
+			</td>
 			
 			<td>
 				<form id="idFormedit" action="<?=base_url()?>lp/editar" method="post">

@@ -32,5 +32,10 @@ class Lp_model extends CI_Model {
 		$lp -> nombre = $nombre;
 		R::store($lp);
 	}
+
+	public function borrar($id_lp) {
+		$lp = R::load('lp',$id_lp);
+		R::trash($lp);
+	}
 }
 ?>
