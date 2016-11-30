@@ -18,7 +18,7 @@ class Lp_model extends CI_Model {
 		] ) != null ? true : false;
 	}
 	public function getTodos() {
-		R::findAll ( 'lp', 'order by nombre' );
+		return R::findAll ( 'lp', 'order by nombre' );
 	}
 }
 ?>

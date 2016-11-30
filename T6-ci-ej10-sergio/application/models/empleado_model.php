@@ -17,6 +17,9 @@ class Empleado_model extends CI_Model {
 		R::store ( $ciudad );
 		R::close ();
 	}
+	public function getTodos() {
+		return R::findAll ( 'empleado', 'order by ape1, ape2, nombre' );
+	}
 }
 
 ?>
