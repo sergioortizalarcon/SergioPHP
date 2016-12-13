@@ -1,5 +1,10 @@
 <?php
 class Ciudad_model extends CI_Model {
+	public function existeCiudad($nombre) {
+		return R::findOne ( 'ciudad', 'nombre = ?', [ 
+				$nombre 
+		] ) != null ? true : false;
+	}
 	public function crear($nombre) {
 		$status = 0;
 		if (! $this->existeCiudad ( $nombre )) {
@@ -12,11 +17,8 @@ class Ciudad_model extends CI_Model {
 		}
 		return $status;
 	}
-	private function existeCiudad($nombre) {
-		$res = R::findOne ( 'ciudad', 'nombre = ?', [ 
-				$nombre 
-		] ) != null ? true : false;
-		return $res;
+	public function getTodas() {
+		return R::findAll ( 'ciudad', 'order by nombre' );
 	}
 }
 ?>

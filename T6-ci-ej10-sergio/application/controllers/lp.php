@@ -3,6 +3,12 @@ class Lp extends CI_Controller {
 	public function crear() {
 		enmarcar ( $this, 'lp/crear' );
 	}
+	public function crearOK() {
+		enmarcar ( $this, 'lp/crearOK' );
+	}
+	public function crearERROR() {
+		enmarcar ( $this, 'lp/crearERROR' );
+	}
 	public function crearPost() {
 		$nombre = $_POST ['nombre'];
 		$this->load->model ( 'lp_model' );
@@ -13,12 +19,5 @@ class Lp extends CI_Controller {
 			header ( 'Location:' . base_url () . 'lp/crearERROR' );
 		}
 	}
-	public function crearOK() {
-		enmarcar ( $this, 'lp/crearOK' );
-	}
-	public function crearERROR() {
-		enmarcar ( $this, 'lp/crearERROR' );
-	}
 }
-
 ?>
